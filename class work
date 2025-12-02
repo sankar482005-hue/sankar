@@ -1,0 +1,24 @@
+public class JBDC {
+
+    public static void main(String[] args) throws SQLException 
+    {
+        
+        try 
+        {
+            Class.forName("org.postgresql.Driver");
+            Connection con=DriverManager.getConnection("jdbc:postgresql://localhost:5432/hospital", "postgres", "sankar");
+            Statement st=con.createStatement();
+            String query="Select * from dmart";
+            ResultSet rs=st.executeQuery(query);
+            while (rs.next())
+            {                
+                System.out.println(rs.getString("product_name")+" "+rs.getString("category"));
+            }
+        } 
+        catch (ClassNotFoundException ex) 
+        {
+            System.out.println("Successfully mismatched");
+        }
+    }
+    
+}
