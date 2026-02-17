@@ -1,0 +1,48 @@
+.container
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    row-gap: 20px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+   
+    
+}
+.box
+{   
+    display: grid;
+    padding: 20px;
+    grid-template-areas: 
+    "header header header"
+    "sidebar sidebar body"
+    "body body body"
+    "footer footer footer";
+    
+    
+    
+}
+.header
+{
+    background-color: antiquewhite;
+    text-align: center;
+    padding: 30px;
+    font-size: 25px;
+    font-weight: bold;
+    border-radius: 20px 20px 0px 0px;
+
+    
+}
+.body
+{
+    background-color: beige;
+    padding: 40px;
+    text-align: justify;
+    font-size: 18px;
+}
+.footer
+{
+    padding: 20px;
+    background-color: blanchedalmond;
+    text-align: center;
+    font-size: 18px;
+    border-radius:0px 0px 20px 20px ;
+}
