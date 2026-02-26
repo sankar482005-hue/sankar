@@ -7,42 +7,54 @@
 </head>
 <body>
     <script>
-      console.log("insert the element")
-      let ar=[10,20,30]
-      let val=12
-      ar.push(val)
-      console.log(ar)
-      console.log("------------------------------------------------------")
+       const option={
+          add:function add()
+          {
+            
+            function inner( a,b)
+            {
+              console.log("Addition of "+a+" and "+b)
+              return a+b;
+            }
+            return inner;
+          },
+          
+          sub:function Sub()
+          {
+            
+            function inner( a,b)
+            {
+              console.log("subtraction of "+a+" and "+b)
+              return a-b;
+            }
+            return inner;
+          },
 
-      console.log("delete the element")
-      let ar1=[10,20,30,40]
-      let del= 40
-      ar1.splice(3)
-      console.log(ar1)
-      console.log("------------------------------------------------------")
+          multi:function multi()
+          { 
+            
 
-      console.log("search the element")
-      let ar2=[10,20,30,40,50]
-      let a=30
-      if( ar2.indexOf(a)>-1)
-      {
-          console.log("value is found "+a)
-        }
-        else
-        {
-            console.log("value is Not found "+a)
-        }
-        console.log("------------------------------------------------------")
-      console.log("display the array") 
-      let arr3=["sankar","dhaya","maddy","ss anna","jaga anna"] 
-      for(let i=0;i<arr3.length;i++)
-      {
-        console.log(arr3[i])
-      }
-      console.log(arr3)
-     
+            function inner( a,b)
+            {
+              console.log("multiplication of "+a+" and "+b)
+              return a*b;
+            }
+            return inner;
+          },
+          
+          
+         
+       }
+       const kuttu = option.add();
+       const kalli = option.sub();
+       const peruku = option.multi();
+
+
       
-
+       
+       console.log(kuttu(10,20))
+       console.log(kalli(10,20))
+       console.log(peruku(10,20))
 
 
     </script>
