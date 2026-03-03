@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>jsmenu</title>
+</head>
+<body>
+  <p id="myElement">hai my name is sankar pandi</p>
+
+  <button onclick="changeColor()">Change color</button>
+  <button onclick="increaseFont()">Increase font size</button>
+  <button onclick="hideElement()">Hide element</button>
+  <button onclick="exitMenu()">Exit</button>
+
+  <script>
+    function changeColor() {
+      document.getElementById("myElement").style.color = "red";
+    }
+
+    function increaseFont() {
+      let el = document.getElementById("myElement");
+      el.style.fontSize = "30px";
+    }
+
+    function hideElement() {
+      document.getElementById("myElement").style.display = "none";
+    }
+
+    function exitMenu() {
+      alert("Exiting menu...");
+    }
+  </script>
+</body>
+</html>
