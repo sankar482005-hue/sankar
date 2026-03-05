@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>User Registration</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 30px;
+    }
+    .success {
+      color: green;
+      font-weight: bold;
+    }
+    .error {
+      color: red;
+      font-weight: bold;
+    }
+    input {
+      margin: 5px 0;
+      padding: 8px;
+      width: 250px;
+    }
+    button {
+      padding: 8px 15px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h2> User Registration</h2>
+
+  <label>Username:</label><br>
+  <input type="text" id="username"><br>
+  <p id="liveUsername"></p>
+
+  <label>Email:</label><br>
+  <input type="text" id="email"><br>
+
+  <label>Password:</label><br>
+  <input type="password" id="password"><br>
+
+  <button id="submitBtn">Submit</button>
+
+  <p id="message"></p>
+
+  <script>
+    const username = document.getElementById("username");
+    const email = document.getElementById("email");
+    const password = document.getElementById("password");
+    const submitBtn = document.getElementById("submitBtn");
+    const message = document.getElementById("message");
+    const liveUsername = document.getElementById("liveUsername");
+
+    // Live display of username while typing
+    username.addEventListener("input", () => {
+      liveUsername.textContent = "Typed Username: " + username.value;
+    });
+
+    // Password field focus and blur events
+    password.addEventListener("focus", () => {
+      password.style.backgroundColor = "red";
+    });
+    password.addEventListener("blur", () => {
+      password.style.backgroundColor = "";
+    });
+
+    // Submit button click event
+    submitBtn.addEventListener("click", (event) => {
+      event.preventDefault(); // prevent page reload
+
+      if (username.value.trim() === "") {
+        message.textContent = "Username is required";
+        message.className = "error";
+        return;
+      }
+      if (email.value.trim() === "") {
+        message.textContent = "Email is required";
+        message.className = "error";
+        return;
+      }
+      if (password.value.trim() === "") {
+        message.textContent = "Password is required";
+        message.className = "error";
+        return;
+      }
+
+      // If all fields are valid
+      message.textContent = "Registration Successful";
+      message.className = "success";
+
+      // Disable submit button after first click
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Submitted";
+    });
+  </script>
+</body>
+</html>
+
